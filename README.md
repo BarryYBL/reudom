@@ -2,7 +2,7 @@
 
 Automated testing framework based on requests and unittest interface.
 
-> 基于 selenium 和 unittest 的 Web UI自动化测试框架。基于 Unittest 和 Requests 的 接口自动化测试框架
+> 基于 Unittest 和 Requests 的 接口自动化测试框架
 #### 介绍
 基于Unittest/Requests的接口自动化测试库
 * 提供脚手架，快速生成接口自动化测试项目。
