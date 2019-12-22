@@ -51,10 +51,6 @@ def main():
         '-r',
         help="run test case")
 
-    parser.add_argument(
-        '-install',
-        help="Install the browser driver, For example, 'chrome', 'firefox'. ")
-
     args = parser.parse_args()
 
     if args.version:
@@ -80,12 +76,6 @@ def main():
             raise NameError("Does not support python2")
         os.system(command)
         return 0
-
-    driver_name = args.install
-    if driver_name:
-        install_driver(driver_name)
-        return 0
-
 
 def create_scaffold(project_name):
     """
