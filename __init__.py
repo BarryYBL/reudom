@@ -27,7 +27,7 @@ from unittest import TestCase
 from .Crypto.Cipher import AES
 __author__ = "Barry"
 
-__version__ = "0.1.0"
+__version__ = "1.0.1"
 
 __description__ = "Automated testing framework based on requests and unittest interface."
 
