@@ -24,6 +24,7 @@ from .skip import skip
 from requests import request
 from requests import *
 from unittest import TestCase
+from .Crypto.Cipher import AES
 __author__ = "Barry"
 
 __version__ = "0.1.0"
