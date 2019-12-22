@@ -13,7 +13,7 @@ from os.path import join, isfile, basename
 from os.path import isdir, dirname, abspath
 from urllib.request import urlopen
 
-from seldom import __description__, __version__
+from __init__ import __description__, __version__
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
