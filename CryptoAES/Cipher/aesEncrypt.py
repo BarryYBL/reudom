@@ -1,7 +1,7 @@
 from CryptoAES.Cipher import AES
 import base64
 
-class aesCrypt():
+class aesCrypt:
     def __init__(self, key, model, iv, encode_='GBK'):  #
         self.encode_ = encode_
         self.model = {'ECB': AES.MODE_ECB, 'CBC': AES.MODE_CBC, 'CFB': AES.MODE_CFB,
@@ -38,8 +38,3 @@ class aesCrypt():
             return base64.b64encode(self.encrypt_text).decode().strip()
         except Exception as error:
             return error
-
-
-
-if __name__ == '__main__':
-    aesCrypt(key='1234567890123456', model='CBC', iv='1234567890123456', encode_='GBK').aesEncrypt('123')
