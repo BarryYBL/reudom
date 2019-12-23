@@ -173,5 +173,6 @@ class YouTest(reudom.TestCase):
 * [seldom](https://github.com/SeldomQA/seldom)
 
 ### 作者联系方式：
-QQ：316 586 6425
+QQ：3165866425
+
 Mail：YBL2652612315@126.com
