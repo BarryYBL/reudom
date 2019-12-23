@@ -69,7 +69,7 @@ Python 3.7.1
 -------------------------
                              @itest.info
 
-generated html file: file:/Users/work/reports/2019_12_22_14_51_57_result.html
+generated html file:/Users/work/reports/2019_12_22_14_51_57_result.html
 .1
 ```
 
