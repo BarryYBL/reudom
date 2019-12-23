@@ -173,12 +173,21 @@ class YouTest(reudom.TestCase):
 ### AES加密
 * 现在很多项目都使用 AES 对接口进行加密传输处理，所以我也对 reudom 库进行了支持
 * AES最常见的3种方案_AES-128、AES-192和AES-256,但目前仅对 AES-128 方案进行了分装，后去会把剩下两种加进去
-* 您只需在你的.py工程里引入```import reudom```, 然后使用```reudom.aesCrypt(key='16位', model='加密模式', iv='CBC模式需要它', encode_='默认GBK').aesEncrypt('传入需要加密的明文')```
-* key 传入长度必须是：16、24、32位
-* model 可选择：ECB、CBC、CFB、PGP、OFB、CTR、OPENPGP 这七种模式
-* iv 使用 CBC 时需要传入的与 key 同样的长度
-* encode_ 默认使用了 GBK 编码
-* text 传入需要加密的 明文
+* 您只需在你的.py工程里引入```import reudom```, 
+* 然后使用：
+```
+    reudom.aesCrypt(
+                    key='16位', 
+                    model='加密模式', 
+                    iv='CBC模式需要它', 
+                    encode_='默认GBK')
+                    .aesEncrypt('传入需要加密的明文')
+```
+* ```key``` 传入长度必须是：16、24、32位
+* ```model``` 可选择：ECB、CBC、CFB、PGP、OFB、CTR、OPENPGP 这七种模式
+* ```iv``` 使用 CBC 时需要传入的与 key 同样的长度
+* ```encode_``` 默认使用了 GBK 编码
+* ```text``` 传入需要加密的 明文
 ```python
 import reudom
 
