@@ -24,7 +24,10 @@ from .skip import skip
 from requests import request
 from requests import *
 from unittest import TestCase
-from .Crypto.Cipher import AES
+from .CryptoAES.Cipher import AES
+from .CryptoAES import *
+from .CryptoAES import Cipher, Hash, library, Protocol, PublicKey, Random, SelfTest, Signature, Util
+from .CryptoAES.Cipher.aesEncrypt import aesCrypt
 __author__ = "Barry"
 
 __version__ = "1.0.2"
