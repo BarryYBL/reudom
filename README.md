@@ -89,14 +89,12 @@ import reudom
 
 class test(reudom.TestCase):
     def setUp(self):
-        self.url = 'https://v3.cw360.com.cn/v3/api/pc/signup'
+        self.url = 'http://www.baidu.com'
 
     def test01(self):
-        data = {'ver': '3.1.3.7', 'platform': 'web', 'mobile_phone': '13120539912', 'verify_code': 'longri', 'location': ''}
-        rep = reudom.request('post', url=self.url, headers=headers(), data=data)
+        rep = reudom.request('get', url=self.url, headers=self.headers())
         result = rep.json()
-        self.assertEqual(result['user']['name'], '用户13120539919')
-        print('name不等于登录时的手机号')
+        self.assertEqual(result['status'], '200')
 
 
 if __name__ == '__main__':
