@@ -30,7 +30,7 @@ from Crypto import Cipher, Hash, Protocol, PublicKey, Random, SelfTest, Signatur
 from .CryptoAES.aesEncrypt import aesCrypt
 __author__ = "Barry"
 
-__version__ = "1.1.3"
+__version__ = "1.1.5"
 
 __description__ = "Automated testing framework based on requests and unittest interface."
 

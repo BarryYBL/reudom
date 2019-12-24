@@ -64,6 +64,8 @@ generated html file:/Users/work/reports/2019_12_22_14_51_57_result.html
 
 你可以到 `myreudom\reports\` 目录查看测试报告。
 
+`reports`文件夹可以不用自己去创建，它会在你执行run.py时自动创建此文件夹
+
 ![](./test_report.png)
 
 ### simple demo
@@ -155,6 +157,11 @@ class YouTest(reudom.TestCase):
         #...
 
 ```
+
+
+### 在PyCharm里使用
+* 当你使用PyCharm编译器或其他Python编译器时，您只需要使用`pip install reudom`安装后在你项目的文件夹内创建`.py`文件里`import reudom`就可以了
+* 如果你需要正式的运行起来，只需在项目跟目录里创建`run.py`里使用上面的`main`方法取运行就可以啦；运行时会自动的在`run.py`的同级目录生成`reports`文件夹生成的 测试报告 就在里面！
 
 
 ### AES加密
