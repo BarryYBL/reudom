@@ -35,7 +35,7 @@ seldom_str = """
 """
 
 def main(path=None,
-         title="Seldom Test Report",
+         title="Reudom Test Report",
          description="Test case execution",
          debug=False,
          rerun=0,
@@ -84,7 +84,7 @@ def main(path=None,
         print("generated html file: file:///{}".format(report))
     else:
         runner = unittest.TextTestRunner(verbosity=2)
-        logger.info("seldom run test 🛫🛫!")
+        logger.info("reudom run test 🛫🛫!")
         print(seldom_str)
         runner.run(suits)
         logger.info("End of the test 🔚!")
