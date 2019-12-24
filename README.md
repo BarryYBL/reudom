@@ -34,7 +34,7 @@ myreudom/
 If you want to keep up with the latest version, you can install with github repository url:
 
 ```shell
-> pip install -U git+https://github.com/BarryYBL/reudom.git@master
+> pip install -U git+https://github.com/SeldomQA/reudom.git@master
 ```
 
 #### 创建项目
@@ -47,27 +47,14 @@ If you want to keep up with the latest version, you can install with github repo
 > reudom -r run.py
 Python 3.7.1
 
-  ━━━━━━神兽出没━━━━━━━
-  　　　┏┓　　　┏┓
-  　　┏┛┻━━━┛┻┓
-  　　┃　　　　　　　┃
-  　　┃　　　━　　　┃
-  　　┃　┳┛　┗┳　┃
-  　　┃　　　　　　　┃
-  　　┃　　　┻　　　┃
-  　　┃　　　　　　　┃
-  　　┗━┓　　　┏━┛
-  　　　　┃　　　┃  神兽保佑
-  　　　　┃　　　┃  代码无bug　　
-  　　　　┃　　　┗━━━┓
-  　　　　┃　　　　　　　┣┓
-  　　　　┃　　　　　　　┏┛
-  　　　　┗┓┓┏━┳┓┏┛
-  　　　　　┃┫┫　┃┫┫
-  　　　　　┗┻┛　┗┻┛
-  ━━━━━━感觉萌萌哒━━━━━━━
--------------------------
-                             @itest.info
+                     _                 
+                    | |                
+  _ __ ___ _   _  __| | ___  _ __ ___  
+ | '__/ _ | | | |/ _` |/ _ \| '_ ` _ \ 
+ | | |  __| |_| | (_| | (_) | | | | | |
+ |_|  \___|\__,_|\__,_|\___/|_| |_| |_|                             
+ --------------------------------------
+                            @itest.info
 
 generated html file:/Users/work/reports/2019_12_22_14_51_57_result.html
 .1
