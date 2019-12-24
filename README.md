@@ -195,7 +195,7 @@ reudom.aesCrypt(key='1234567890123456', model='CBC', iv='1234567890123456', enco
 
 
 控制台：
-/usr/bin/python3 /Users/yuanbaolei/work/GitHub/reudom/CryptoAES/Cipher/aesEncrypt.py
+/usr/bin/python3 /Users/yuanbaolei/work/GitHub/reudom/CryptoAESAES/Cipher/aesEncrypt.py
 15tT+y0b+lJq2HIKUjsvvg==
 
 Process finished with exit code 0
@@ -210,3 +210,5 @@ Process finished with exit code 0
 QQ：3165866425
 
 Mail：YBL2652612315@126.com
+
+blog：https://www.cnblogs.com/Barrybl/

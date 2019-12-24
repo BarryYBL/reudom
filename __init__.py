@@ -24,13 +24,13 @@ from .skip import skip
 from requests import request
 from requests import *
 from unittest import TestCase
-from .CryptoAES.Cipher import AES
-from .CryptoAES import *
-from .CryptoAES import Cipher, Hash, library, Protocol, PublicKey, Random, SelfTest, Signature, Util
-from .CryptoAES.Cipher.aesEncrypt import aesCrypt
+from Crypto.Cipher import AES
+from Crypto import *
+from Crypto import Cipher, Hash, Protocol, PublicKey, Random, SelfTest, Signature, Util
+from .CryptoAES.aesEncrypt import aesCrypt
 __author__ = "Barry"
 
-__version__ = "1.1.1"
+__version__ = "1.1.3"
 
 __description__ = "Automated testing framework based on requests and unittest interface."
 

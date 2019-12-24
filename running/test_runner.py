@@ -9,29 +9,15 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 
-seldom_str = """
-
-  ━━━━━━神兽出没━━━━━━━
-  　　　┏┓　　　┏┓
-  　　┏┛┻━━━┛┻┓
-  　　┃　　　　　　　┃
-  　　┃　　　━　　　┃
-  　　┃　┳┛　┗┳　┃
-  　　┃　　　　　　　┃
-  　　┃　　　┻　　　┃
-  　　┃　　　　　　　┃
-  　　┗━┓　　　┏━┛
-  　　　　┃　　　┃  神兽保佑
-  　　　　┃　　　┃  代码无bug　　
-  　　　　┃　　　┗━━━┓
-  　　　　┃　　　　　　　┣┓
-  　　　　┃　　　　　　　┏┛
-  　　　　┗┓┓┏━┳┓┏┛
-  　　　　　┃┫┫　┃┫┫
-  　　　　　┗┻┛　┗┻┛
-  ━━━━━━感觉萌萌哒━━━━━━━
--------------------------
-                             @itest.info
+reudom_str = """
+                     _                 
+                    | |                
+  _ __ ___ _   _  __| | ___  _ __ ___  
+ | '__/ _ | | | |/ _` |/ _ \| '_ ` _ \ 
+ | | |  __| |_| | (_| | (_) | | | | | |
+ |_|  \___|\__,_|\__,_|\___/|_| |_| |_|                             
+ --------------------------------------
+                            @itest.info
 """
 
 def main(path=None,
@@ -79,13 +65,13 @@ def main(path=None,
 
         with(open(report, 'wb')) as fp:
             runner = HTMLTestRunner(stream=fp, title=title, description=description)
-            print(seldom_str)
+            print(reudom_str)
             runner.run(suits, rerun=rerun, save_last_run=save_last_run)
         print("generated html file: file:///{}".format(report))
     else:
         runner = unittest.TextTestRunner(verbosity=2)
         logger.info("reudom run test 🛫🛫!")
-        print(seldom_str)
+        print(reudom_str)
         runner.run(suits)
         logger.info("End of the test 🔚!")
 
