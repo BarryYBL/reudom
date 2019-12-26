@@ -2,7 +2,7 @@ from Crypto.Cipher import AES
 import base64
 
 class aesCrypt:
-    def __init__(self, key, model, iv, encode_='GBK'):  #
+    def __init__(self, key, model, iv, encode_):  #
         self.encode_ = encode_
         self.model = {'ECB': AES.MODE_ECB, 'CBC': AES.MODE_CBC, 'CFB': AES.MODE_CFB,
                       'OFB': AES.MODE_OFB, 'CTR': AES.MODE_CTR, 'OPENPGP': AES.MODE_OPENPGP}[model]
@@ -36,3 +36,25 @@ class aesCrypt:
             return base64.b64encode(self.encrypt_text).decode().strip()
         except Exception as error:
             return error
+
+    # def aesCBC(self, data, key, ):
+    #     import json
+    #     from base64 import b64encode
+    #     from Crypto.Cipher import AES
+    #     from Crypto.Util.Padding import pad
+    #     from Crypto.Random import get_random_bytes
+    #
+    #
+    #     data = b"secret"
+    #     key = get_random_bytes(16)
+    #     cipher = AES.new(key, AES.MODE_CBC)
+    #     ct_bytes = cipher.encrypt(pad(data, AES.block_size))
+    #     iv = b64encode(cipher.iv).decode('utf-8')
+    #     ct = b64encode(ct_bytes).decode('utf-8')
+    #     result = json.dumps({'iv': iv, 'ciphertext': ct})
+    #     print(result)
+    #     '{"iv": "bWRHdzkzVDFJbWNBY0EwSmQ1UXFuQT09", "ciphertext": "VDdxQVo3TFFCbXIzcGpYa1lJbFFZQT09"}'
+
+
+if __name__ == '__main__':
+    pass

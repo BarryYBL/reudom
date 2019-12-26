@@ -19,6 +19,7 @@
 
 from .running.test_runner import main
 from .case import TestCase
+from .case import *
 from .testdata import ddt, ddt_class
 from .skip import skip
 from requests import request
