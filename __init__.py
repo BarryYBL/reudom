@@ -28,10 +28,9 @@ from unittest import TestCase
 from Crypto.Cipher import AES
 from Crypto import *
 from Crypto import Cipher, Hash, Protocol, PublicKey, Random, SelfTest, Signature, Util
-from .CryptoAES.aesEncrypt import aesCrypt
 __author__ = "Barry"
 
-__version__ = "1.1.5"
+__version__ = "1.1.6"
 
 __description__ = "Automated testing framework based on requests and unittest interface."
 

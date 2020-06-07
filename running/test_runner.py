@@ -65,12 +65,14 @@ def main(path=None,
 
         with(open(report, 'wb')) as fp:
             runner = HTMLTestRunner(stream=fp, title=title, description=description)
+            time.sleep(0.1)
             print(reudom_str)
             runner.run(suits, rerun=rerun, save_last_run=save_last_run)
         print("generated html file: file:///{}".format(report))
     else:
         runner = unittest.TextTestRunner(verbosity=2)
         logger.info("reudom run test 🛫🛫!")
+        time.sleep(0.1)
         print(reudom_str)
         runner.run(suits)
         logger.info("End of the test 🔚!")
@@ -78,4 +80,3 @@ def main(path=None,
 
 if __name__ == '__main__':
     main()
-
