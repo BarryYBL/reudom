@@ -106,7 +106,7 @@ import reudom
 
 if __name__ == '__main__':
 
-    seldom.main(
+    reudom.main(
               path="./",
               title="接口自动化测试用例", 
               description="详细测试结果：", 
