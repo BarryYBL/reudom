@@ -100,22 +100,23 @@ def create_scaffold(project_name):
         logger.info(msg)
 
     test_sample = '''
-    import reudom
-    class YouTest(reudom.TestCase):
-        def test_case01(self):
-            """Write the test case again"""
-        
-    if __name__ == '__main__':
-        reudom.main("test_sample.py")
+import reudom
+class YouTest(reudom.TestCase):
+    def test_case01(self):
+        """Write the test case again"""
+    
+    
+if __name__ == '__main__':
+    reudom.main("test_sample.py")
 '''
     run_test = """
-    import reudom
+import reudom
 
 
-    if __name__ == '__main__':
-        # run test
-        # reudom.main("./test_dir/")
-        reudom.main("./test_dir/test_sample.py")
+if __name__ == '__main__':
+    # run test
+    # reudom.main("./test_dir/")
+    reudom.main("./test_dir/test_sample.py")
 
 """
     create_folder(project_name)

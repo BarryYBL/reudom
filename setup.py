@@ -29,7 +29,9 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'requests', 'xlrd'
+        'requests',
+        'xlrd',
+        'parameterized==0.7.0'
     ],
     classifiers=[
         'Intended Audience :: Developers',
