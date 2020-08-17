@@ -17,14 +17,32 @@
 # specific language governing permissions and limitations
 # under the License.
 
-from .running.test_runner import main
 from .case import TestCase
-from .case import *
-from .testdata import ddt, ddt_class
+from .running.test_runner import main
+
+# 跳过用例
 from .skip import skip
-import requests
-from requests import *
-from unittest import TestCase
+from .skip import skip_if
+from .skip import skip_unless
+
+# request方法引入
+from requests import post
+from requests import get
+from requests import put
+from requests import head
+from requests import patch
+from requests import options
+
+# 时间戳
+from .testdata.timestamp import time
+
+# ddt数据驱动
+from .testdata.parameterizeds import ddt, ddt_class
+
+# User-Agent 浏览器用户代理
+from .testdata.User_Agent import Chrome, Safari, IE, Firefox
+from .testdata.User_Agent import Chrome_phone, Safari_phone, IE_phone, Firefox_phone
+
 
 __author__ = "Barry"
 
