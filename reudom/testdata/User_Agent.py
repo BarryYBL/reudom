@@ -56,3 +56,7 @@ def Firefox_phone():
     """phone--Firefox"""
     FirefoxPhone = "User-Agent: Mozilla/5.0 (Androdi; Linux armv7l; rv:5.0) Gecko/ Firefox/5.0 fennec/5.0"
     return FirefoxPhone
+
+
+if __name__ == '__main__':
+    print(Chrome())

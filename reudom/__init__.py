@@ -34,7 +34,7 @@ from requests import patch
 from requests import options
 
 # 时间戳
-from .testdata.timestamp import time
+from .testdata.timestamp import TimeStamp
 
 # ddt数据驱动
 from .testdata.parameterizeds import ddt, ddt_class
@@ -46,7 +46,7 @@ from .testdata.User_Agent import Chrome_phone, Safari_phone, IE_phone, Firefox_p
 
 __author__ = "Barry"
 
-__version__ = "1.2.0.3"
+__version__ = "1.2.1.0"
 
 __description__ = "Automated testing framework based on requests and unittest interface."
 
