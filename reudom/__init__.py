@@ -46,7 +46,7 @@ from .testdata.User_Agent import Chrome_phone, Safari_phone, IE_phone, Firefox_p
 
 __author__ = "Barry"
 
-__version__ = "1.2.1.0"
+__version__ = "1.2.2.1"
 
 __description__ = "Automated testing framework based on requests and unittest interface."
 

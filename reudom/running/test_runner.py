@@ -3,11 +3,11 @@ import os
 import time
 import logging
 import unittest
-from .HTMLTestRunner import HTMLTestRunner
+# from .HTMLTestRunner import HTMLTestRunner
+from TestRunner import HTMLTestRunner
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
-
 
 reudom_str = """
                      _                 
@@ -19,6 +19,7 @@ reudom_str = """
  --------------------------------------
                             @itest.info
 """
+
 
 def main(path=None,
          title="Reudom Test Report",
