@@ -31,7 +31,8 @@ setup(
     install_requires=[
         'requests',
         'xlrd',
-        'parameterized==0.7.0'
+        'parameterized==0.7.0',
+        'jinja2>=2.11.2'
     ],
     classifiers=[
         'Intended Audience :: Developers',
