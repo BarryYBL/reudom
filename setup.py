@@ -34,9 +34,6 @@ setup(
         'parameterized==0.7.0',
         'jinja2>=2.11.2'
     ],
-
-    dependency_links=['https://github.com/BarryYBL/HTMLTestRunner/archive/1.0.0.tar.gz'],
-
     classifiers=[
         'Intended Audience :: Developers',
         'Operating System :: MacOS :: MacOS X',

@@ -10,7 +10,7 @@ class ddt(parameterized):
 
     @classmethod
     def data(cls, input, name_func=None, doc_func=None, skip_on_empty=False,
-               **legacy):
+             **legacy):
         """ A "brute force" method of parameterizing test cases. Creates new
             test cases and injects them into the namespace that the wrapped
             function is being defined in. Useful for parameterizing tests in

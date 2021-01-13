@@ -40,13 +40,13 @@ from .testdata.timestamp import TimeStamp
 from .testdata.parameterizeds import ddt, ddt_class
 
 # User-Agent 浏览器用户代理
-from .testdata.User_Agent import Chrome, Safari, IE, Firefox
-from .testdata.User_Agent import Chrome_phone, Safari_phone, IE_phone, Firefox_phone
+from .testdata.User_Agent import chromePC, safariPC, iePC, firefoxPc
+from .testdata.User_Agent import chromePhone, safariPhone, iePhone, firefoxPhone
 
 
 __author__ = "Barry"
 
-__version__ = "1.2.2.1"
+__version__ = "1.2.2.2"
 
 __description__ = "Automated testing framework based on requests and unittest interface."
 
