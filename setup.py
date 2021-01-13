@@ -48,5 +48,14 @@ setup(
     entry_points='''
         [console_scripts]
         reudom=reudom.cli:main
-    '''
+    ''',
+    py_modules=['whyteboard'],
+    scripts=[
+        'reudom/TestRunner/html/charts_script.html',
+        'reudom/TestRunner/html/heading.html',
+        'reudom/TestRunner/html/mail.html',
+        'reudom/TestRunner/html/report.html',
+        'reudom/TestRunner/html/stylesheet.html',
+        'reudom/TestRunner/html/template.html',
+    ],
 )

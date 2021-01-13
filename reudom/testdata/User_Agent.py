@@ -60,7 +60,7 @@ def Firefox_phone():
 
 chromePC = Chrome()
 safariPC = Safari()
-iePC = Ie()
+iePC = IE()
 firefoxPc = Firefox()
 
 chromePhone = Chrome_phone()

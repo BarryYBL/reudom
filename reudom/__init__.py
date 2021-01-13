@@ -43,10 +43,8 @@ from .testdata.parameterizeds import ddt, ddt_class
 from .testdata.User_Agent import chromePC, safariPC, iePC, firefoxPc
 from .testdata.User_Agent import chromePhone, safariPhone, iePhone, firefoxPhone
 
-
 __author__ = "Barry"
 
-__version__ = "1.2.2.2"
+__version__ = "1.2.3.0"
 
 __description__ = "Automated testing framework based on requests and unittest interface."
-

@@ -16,6 +16,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 HTML_DIR = os.path.join(BASE_DIR, "html")
 INIT_FILE = os.path.join(BASE_DIR, "__init__.py")
@@ -29,6 +30,7 @@ with open(INIT_FILE, 'rb') as f:
     version = str(ast.literal_eval(_version_re.search(
         f.read().decode('utf-8')).group(1)))
 
+
 # ---------------------------
 # Define the HTML template directory
 # --------------------------
@@ -36,8 +38,8 @@ env = Environment(loader=FileSystemLoader(HTML_DIR))
 
 
 class OutputRedirector(object):
-    """
-    Wrapper to redirect stdout or stderr
+    """ 
+    Wrapper to redirect stdout or stderr 
     """
 
     def __init__(self, fp):
@@ -65,7 +67,6 @@ class RunResult:
     failed = 0
     errors = 0
     skiped = 0
-    runtime = []
 
 
 # ----------------------------------------------------------------------
@@ -90,6 +91,7 @@ class Template_mixin(object):
 <tr class='%(style)s'>
     <td>%(name)s</td>
     <td>%(desc)s</td>
+    <td></td>
     <td>%(count)s</td>
     <td>%(Pass)s</td>
     <td>%(fail)s</td>
@@ -106,6 +108,9 @@ class Template_mixin(object):
     </td>
     <td style="color: #495057">
         <div>%(desc)s</div>
+    </td>
+    <td style="color: #495057">
+        <div>%(runtime)s s</div>
     </td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
@@ -134,10 +139,14 @@ class Template_mixin(object):
     <td style="color: #495057">
         <div>%(desc)s</div>
     </td>
+    <td style="color: #495057">
+        <div>%(runtime)s s</div>
+    </td>
     <td colspan='5' align='center'>%(status)s</td>
     <td>%(img)s</td>
 </tr>
 """  # variables: (tid, Class, style, desc, status)
+
 
     IMG_TMPL = r"""
 <a  onfocus='this.blur();' href="javacript:void(0);" onclick="show_img(this)">show</a>
@@ -147,7 +156,6 @@ class Template_mixin(object):
     <div class="imgyuan"></div>
 </div>
 """
-
 
 # -------------------- The end of the Template class -------------------
 
@@ -165,7 +173,7 @@ class _TestResult(TestResult):
         self.stderr0 = None
         self.success_count = 0
         self.failure_count = 0
-        self.error_count = 0
+        self.error_count = 0        
         self.skip_count = 0
         self.verbosity = verbosity
         self.rerun = rerun
@@ -179,6 +187,7 @@ class _TestResult(TestResult):
     def startTest(self, test):
         self.case_start_time = time.time()
         test.imgs = getattr(test, "imgs", [])
+        test.runtime = getattr(test, "runtime", None)
         self.outputBuffer = io.StringIO()
         stdout_redirector.fp = self.outputBuffer
         stderr_redirector.fp = self.outputBuffer
@@ -232,7 +241,8 @@ class _TestResult(TestResult):
                     self.runs = 0
         self.complete_output()
         self.case_end_time = time.time()
-        RunResult.runtime.append(self.case_end_time - self.case_start_time)
+        case_run_time = self.case_end_time - self.case_start_time
+        test.runtime = "%.2f" % case_run_time
 
     def addSuccess(self, test):
         self.success_count += 1
@@ -361,12 +371,11 @@ class HTMLTestRunner(Template_mixin):
         startTime = str(self.startTime)[:19]
         duration = str(self.stopTime - self.startTime)
         status = []
-
+        
         RunResult.passed = result.success_count
         RunResult.failed = result.failure_count
         RunResult.errors = result.error_count
         RunResult.Skiped = result.skip_count
-        print("测试时间记录", RunResult.runtime)
         if result.success_count:
             status.append('Passed:%s' % result.success_count)
         if result.failure_count:
@@ -387,7 +396,7 @@ class HTMLTestRunner(Template_mixin):
         ]
 
     def generateReport(self, test, result):
-        template = env.get_template('teamplate.html')
+        template = env.get_template('template.html')
         stylesheet = env.get_template('stylesheet.html').render()
         report_attrs = self.getReportAttributes(result)
 
@@ -395,7 +404,7 @@ class HTMLTestRunner(Template_mixin):
         heading = self._generate_heading(report_attrs)
         report = self._generate_report(result)
         chart = self._generate_chart(result)
-
+        
         html_content = template.render(
             title=saxutils.escape(self.title),
             generator=generator,
@@ -468,7 +477,7 @@ class HTMLTestRunner(Template_mixin):
         return report
 
     def _generate_chart(self, result):
-        chart = env.get_template('echarts_script.html').render(
+        chart = env.get_template('charts_script.html').render(
             Pass=str(result.success_count),
             fail=str(result.failure_count),
             error=str(result.error_count),
@@ -511,8 +520,8 @@ class HTMLTestRunner(Template_mixin):
             id=tid,
             output=saxutils.escape(uo + ue),
         )
+        # add image
         if getattr(t, 'imgs', []):
-            # 判断截图列表，如果有则追加
             tmp = ""
             for i, img in enumerate(t.imgs):
                 if i == 0:
@@ -523,12 +532,19 @@ class HTMLTestRunner(Template_mixin):
         else:
             screenshots_html = """"""
 
+        # add runtime
+        if getattr(t, 'runtime', []):
+            runtime = t.runtime
+        else:
+            runtime = "0.00"
+
         row = tmpl % dict(
             tid=tid,
             Class=(n == 0 and 'hiddenRow' or 'none'),
             style=n == 2 and 'errorCase' or (n == 1 and 'failCase' or 'passCase'),
             casename=name,
             desc=doc,
+            runtime=runtime,
             script=script,
             status=self.STATUS[n],
             img=screenshots_html
@@ -542,7 +558,6 @@ class SMTP(object):
     """
     Mail function based on SMTP protocol
     """
-
     def __init__(self, user, password, host, port=None):
         self.user = user
         self.password = password
@@ -557,12 +572,12 @@ class SMTP(object):
             subject = 'Unit Test Report'
         if contents is None:
             contents = env.get_template('mail.html').render(
-                mail_pass=str(RunResult.passed),
+                mail_pass=str(RunResult.passed), 
                 mail_fail=str(RunResult.failed),
                 mail_error=str(RunResult.errors),
                 mail_skip=str(RunResult.skiped)
             )
-
+        
         msg = MIMEMultipart()
         msg['Subject'] = Header(subject, 'utf-8')
         msg['From'] = self.user
