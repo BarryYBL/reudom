@@ -19,6 +19,7 @@
 
 from .case import TestCase
 from .running.test_runner import main
+from .TestRunner.HTMLTestRunner import SMTP
 
 # 跳过用例
 from .skip import skip
